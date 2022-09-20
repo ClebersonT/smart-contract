@@ -1,0 +1,25 @@
+{
+  "name": "dtoken",
+  "version": "1.0.0",
+  "description": "Mint token Dtech",
+  "main": "index.js",
+  "scripts": {
+    "app": "ts-node ./app.ts",
+    "clean": "npm run clean:program",
+    "build:program": "cargo build-bpf --manifest-path=./src/program/Cargo.toml --bpf-out-dir=dist/program",
+    "clean:program": "cargo clean --manifest-path=./src/program/Cargo.toml && rm -rf ./dist",
+    "test:program": "cargo test-bpf --manifest-path=./src/program/Cargo.toml"
+  },
+  "dependencies": {
+    "@solana/buffer-layout": "^4.0.0",
+    "@solana/spl-token": "^0.3.0",
+    "@solana/web3.js": "^1.51.0",
+    "buffer-layout": "^1.2.2",
+    "mz": "^2.7.0",
+    "ts-node": "^10.9.1",
+    "yaml": "^2.1.1"
+  },
+  "devDependencies": {
+    "@types/mz": "^2.7.4"
+  }
+}
